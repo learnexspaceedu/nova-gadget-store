@@ -1,0 +1,103 @@
+/* Global styles: colors, typography, layout helpers.
+   Dark futuristic theme with cyan/electric blue accents. */
+
+:root {
+  --bg: #05070d;
+  --bg-2: #0a0e1a;
+  --surface: #10151f;
+  --surface-2: #161c2a;
+  --border: #1f2738;
+  --text: #ffffff;
+  --text-muted: #9aa3b2;
+  --accent: #00d4ff;
+  --accent-2: #38bdf8;
+  --accent-glow: rgba(0, 212, 255, 0.45);
+  --danger: #ff5577;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow-glow: 0 0 24px rgba(0, 212, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(0, 212, 255, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgba(56, 189, 248, 0.06), transparent 60%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.text-accent { color: var(--accent); }
+
+/* Utility grid layouts */
+.grid-products {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1024px) {
+  .grid-products { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .grid-products { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 56px 0; }
+  .section-title { font-size: 28px; }
+}
+@media (max-width: 480px) {
+  .grid-products { grid-template-columns: 1fr; }
+}
