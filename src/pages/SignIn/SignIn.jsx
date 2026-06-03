@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
+import { useAuth } from "../../context/AuthContext";
 
 function SignIn() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
@@ -18,6 +20,7 @@ function SignIn() {
       return;
     }
     setError("");
+    login(form.email, form.password);
     navigate("/home");
   }
 
@@ -32,13 +35,27 @@ function SignIn() {
         <form onSubmit={handleSubmit} className="auth-form">
           <label>
             <span>Email</span>
-            <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="you@example.com" />
+            <input
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="you@example.com"
+            />
           </label>
           <label>
             <span>Password</span>
-            <input name="password" type="password" value={form.password} onChange={handleChange} placeholder="••••••••" />
+            <input
+              name="password"
+              type="password"
+              value={form.password}
+              onChange={handleChange}
+              placeholder="••••••••"
+            />
           </label>
-          <button type="submit" className="btn-primary">Sign In</button>
+          <button type="submit" className="btn-primary">
+            Sign In
+          </button>
         </form>
 
         <p className="auth-switch">
