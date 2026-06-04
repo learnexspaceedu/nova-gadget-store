@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Hero.css";
+import StarIcon from "../../assets/icons/StarIcon";
 
 function Hero() {
   return (
@@ -18,8 +19,12 @@ function Hero() {
             engineers, loved by creators.
           </p>
           <div className="hero-cta">
-            <Link to="/shop" className="btn-primary">Shop Now</Link>
-            <Link to="/categories" className="btn-ghost">Browse Categories</Link>
+            <Link to="/shop" className="btn-primary">
+              Shop Now
+            </Link>
+            <Link to="/categories" className="btn-ghost">
+              Browse Categories
+            </Link>
           </div>
           <div className="hero-stats">
             <div>
@@ -31,7 +36,10 @@ function Hero() {
               <span>Products</span>
             </div>
             <div>
-              <strong>4.9★</strong>
+              <strong>
+                4.9
+                <StarIcon className={"star-icon"} />
+              </strong>
               <span>Average Rating</span>
             </div>
           </div>

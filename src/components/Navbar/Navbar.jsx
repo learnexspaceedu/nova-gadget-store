@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useCart } from "../../context/CartContext.jsx";
 import "./Navbar.css";
 import { useAuth } from "../../context/AuthContext.jsx";
-import { UserCircle } from "lucide";
-
+import UserIcon from "../../assets/icons/UserIcon.jsx";
+import MenuIcon from "../../assets/icons/MenuIcon.jsx";
+import CartIcon from "../../assets/icons/CartIcon.jsx";
 function Navbar() {
   const { auth } = useAuth();
   const { totalItems } = useCart();
@@ -42,12 +43,14 @@ function Navbar() {
 
         <div className="nav-actions">
           <Link to="/cart" className="cart-btn" onClick={closeMenu}>
-            <span className="cart-icon">🛒</span>
+            <CartIcon />
             {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
           </Link>
           {/* Auth section */}
           {auth.isAuthenticated ? (
-            <div className="avatar">👩‍🎤</div>
+            <div className="cart-btn">
+              <UserIcon />
+            </div>
           ) : (
             <>
               <Link to="/signin" className="btn-ghost" onClick={closeMenu}>
@@ -64,7 +67,7 @@ function Navbar() {
             aria-label="Toggle menu"
             onClick={() => setOpen(!open)}
           >
-            ☰
+            <MenuIcon />
           </button>
         </div>
       </div>

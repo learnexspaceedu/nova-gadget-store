@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import CategoryCard from "../../components/CategoryCard/CategoryCard.jsx";
 import { products, categories } from "../../data/products.js";
 import "./Home.css";
+import ArrowRightIcon from "../../assets/icons/ArrowRightIcon.jsx";
 
 function Home() {
   // Featured = first 4 products (simple slice, beginner friendly).
@@ -20,9 +21,14 @@ function Home() {
           <div className="section-head">
             <div>
               <h2 className="section-title">Featured Products</h2>
-              <p className="section-subtitle">Hand-picked best sellers this week.</p>
+              <p className="section-subtitle">
+                Hand-picked best sellers this week.
+              </p>
             </div>
-            <Link to="/shop" className="link-accent">View all →</Link>
+            <Link to="/shop" className="link-accent">
+              View all
+              <ArrowRightIcon />
+            </Link>
           </div>
           <div className="grid-products">
             {featured.map((p) => (
@@ -38,9 +44,14 @@ function Home() {
           <div className="section-head">
             <div>
               <h2 className="section-title">Shop by Category</h2>
-              <p className="section-subtitle">Find exactly what you're looking for.</p>
+              <p className="section-subtitle">
+                Find exactly what you're looking for.
+              </p>
             </div>
-            <Link to="/categories" className="link-accent">All categories →</Link>
+            <Link to="/categories" className="link-accent">
+              All categories
+              <ArrowRightIcon />
+            </Link>
           </div>
           <div className="grid-categories-preview">
             {previewCategories.map((c) => (
@@ -58,9 +69,14 @@ function Home() {
               <span className="hero-badge">
                 <span className="dot" /> Limited Time
               </span>
-              <h2>Save up to <span className="text-accent">40%</span> on Gaming Gear</h2>
+              <h2>
+                Save up to <span className="text-accent">40%</span> on Gaming
+                Gear
+              </h2>
               <p>Upgrade your setup with our biggest sale of the season.</p>
-              <Link to="/shop?category=gaming" className="btn-primary">Shop Gaming</Link>
+              <Link to="/shop?category=gaming" className="btn-primary">
+                Shop Gaming
+              </Link>
             </div>
             <div className="promo-image">
               <img
@@ -78,7 +94,9 @@ function Home() {
           <div className="section-head">
             <div>
               <h2 className="section-title">New Arrivals</h2>
-              <p className="section-subtitle">Fresh drops from our latest collection.</p>
+              <p className="section-subtitle">
+                Fresh drops from our latest collection.
+              </p>
             </div>
           </div>
           <div className="grid-products">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./CategoryCard.css";
+import ArrowRightIcon from "../../assets/icons/ArrowRightIcon";
 
 function CategoryCard({ category }) {
   return (
@@ -9,7 +10,10 @@ function CategoryCard({ category }) {
       </div>
       <div className="category-overlay">
         <h3>{category.name}</h3>
-        <span className="category-cta">Shop now →</span>
+        <span className="category-cta">
+          Shop now
+          <ArrowRightIcon />
+        </span>
       </div>
     </Link>
   );
