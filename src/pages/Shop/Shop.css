@@ -1,13 +1,16 @@
-.shop-header { margin-bottom: 24px; }
+.shop-header {
+  margin-bottom: 24px;
+}
 .shop-toolbar {
   display: flex;
   gap: 12px;
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
-.shop-search, .shop-sort {
+.shop-search,
+.shop-sort {
   background: var(--surface);
-  color: var(--text);
+  color: var(--text-primary);
   border: 1px solid var(--border);
   padding: 12px 16px;
   border-radius: 10px;
@@ -16,8 +19,14 @@
   outline: none;
   transition: border-color 0.2s ease;
 }
-.shop-search { flex: 1; min-width: 240px; }
-.shop-search:focus, .shop-sort:focus { border-color: var(--accent); }
+.shop-search {
+  flex: 1;
+  min-width: 240px;
+}
+.shop-search:focus,
+.shop-sort:focus {
+  border-color: var(--primary);
+}
 
 .shop-filters {
   display: flex;
@@ -28,7 +37,7 @@
 .filter-chip {
   padding: 8px 16px;
   background: var(--surface);
-  color: var(--text-muted);
+  color: var(--text-primary);
   border: 1px solid var(--border);
   border-radius: 999px;
   font-size: 13px;
@@ -37,11 +46,14 @@
   transition: all 0.2s ease;
   font-family: inherit;
 }
-.filter-chip:hover { color: var(--text); border-color: var(--accent); }
+.filter-chip:hover {
+  color: var(--text);
+  border-color: var(--primary-hover);
+}
 .filter-chip.active {
-  background: var(--accent);
-  color: #00131c;
-  border-color: var(--accent);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
   box-shadow: var(--shadow-glow);
 }
 
@@ -50,4 +62,7 @@
   padding: 80px 20px;
   color: var(--text-muted);
 }
-.empty-state h3 { color: var(--text); margin-bottom: 8px; }
+.empty-state h3 {
+  color: var(--text);
+  margin-bottom: 8px;
+}

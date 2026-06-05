@@ -19,7 +19,7 @@ function Hero() {
             engineers, loved by creators.
           </p>
           <div className="hero-cta">
-            <Link to="/shop" className="btn-primary">
+            <Link to="/shop" className="btn-primary primary-btn-color">
               Shop Now
             </Link>
             <Link to="/categories" className="btn-ghost">
