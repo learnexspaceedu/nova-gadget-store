@@ -61,11 +61,6 @@ function Footer() {
           </ul>
         </div>
       </div>
-
-      <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} NovaTech. All rights reserved.</span>
-        <span>Built with React + Pure CSS</span>
-      </div>
     </footer>
   );
 }

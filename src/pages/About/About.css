@@ -20,6 +20,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 40px;
+  box-shadow: 0 6px 14px rgb(0, 0, 0, 0.15);
 }
 .about-stats div {
   text-align: center;
@@ -43,6 +44,7 @@
 }
 .value-card {
   background: var(--surface);
+  box-shadow: 0 6px 14px rgb(0, 0, 0, 0.15);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px;

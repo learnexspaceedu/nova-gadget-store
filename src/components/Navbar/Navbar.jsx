@@ -24,7 +24,7 @@ function Navbar() {
         </Link>
 
         <nav className={`nav-links ${open ? "open" : ""}`}>
-          <NavLink to="/home" onClick={closeMenu}>
+          <NavLink to="/" onClick={closeMenu}>
             Home
           </NavLink>
           <NavLink to="/shop" onClick={closeMenu}>

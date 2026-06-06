@@ -1,8 +1,8 @@
 .footer {
   margin-top: 80px;
   padding: 60px 0 24px;
-  background: var(--bg-2);
   border-top: 1px solid var(--border);
+  background-color: #2564eb2a;
 }
 .footer-grid {
   display: grid;
@@ -19,14 +19,14 @@
   margin-bottom: 14px;
 }
 .footer-text {
-  color: var(--text-muted);
+  color: var(--text-primary);
   max-width: 320px;
 }
 .footer h4 {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 16px;
 }
 .footer ul {
@@ -36,18 +36,18 @@
   gap: 10px;
 }
 .footer ul a {
-  color: var(--text-muted);
+  color: var(--text-primary);
   transition: color 0.2s ease;
 }
 .footer ul a:hover {
-  color: var(--text);
+  color: var(--primary-hover);
 }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   padding-top: 24px;
   border-top: 1px solid var(--border);
-  color: var(--text-muted);
+  color: var(--text-primary);
   font-size: 14px;
 }
 .logout-btn {
