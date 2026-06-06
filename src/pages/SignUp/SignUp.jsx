@@ -29,7 +29,7 @@ function SignUp() {
       return setError("Passwords don't match.");
     setError("");
     signup(form.name, form.email, form.password);
-    navigate("/home");
+    navigate("/");
   }
 
   return (

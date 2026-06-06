@@ -3,8 +3,8 @@ import React from "react";
 const UserIcon = () => {
   return (
     <svg
-      width="800"
-      height="800"
+      width="80"
+      height="80"
       viewBox="0 0 800 800"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

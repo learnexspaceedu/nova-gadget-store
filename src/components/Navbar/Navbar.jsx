@@ -6,6 +6,7 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import UserIcon from "../../assets/icons/UserIcon.jsx";
 import MenuIcon from "../../assets/icons/MenuIcon.jsx";
 import CartIcon from "../../assets/icons/CartIcon.jsx";
+import Avatar from "../Avatar/Avatar.jsx";
 function Navbar() {
   const { auth } = useAuth();
   const { totalItems } = useCart();
@@ -48,9 +49,7 @@ function Navbar() {
           </Link>
           {/* Auth section */}
           {auth.isAuthenticated ? (
-            <div className="cart-btn">
-              <UserIcon />
-            </div>
+            <Avatar />
           ) : (
             <>
               <Link to="/signin" className="btn-ghost" onClick={closeMenu}>

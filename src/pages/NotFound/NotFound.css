@@ -24,15 +24,13 @@
   margin-bottom: 22px;
   border: 1px solid var(--border);
   border-radius: 18px;
+  color: var(--primary);
+  background: var(--primary-foreground);
 }
 
 .not-found-icon svg {
-  width: 42px;
-  height: 42px;
-  fill: none;
-  stroke: var(--primary);
-  stroke-width: 7;
-  stroke-linecap: round;
+  width: 52px;
+  height: 52px;
 }
 
 .not-found-code {

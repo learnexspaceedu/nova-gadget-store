@@ -53,11 +53,6 @@ function Footer() {
             <li>
               <Link to="/signup">Sign Up</Link>
             </li>
-            <li>
-              <button onClick={() => logout()} className="logout-btn">
-                Logout
-              </button>
-            </li>
           </ul>
         </div>
       </div>

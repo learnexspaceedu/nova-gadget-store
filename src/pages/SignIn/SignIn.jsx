@@ -21,7 +21,7 @@ function SignIn() {
     }
     setError("");
     login(form.email, form.password);
-    navigate("/home");
+    navigate("/");
   }
 
   return (
