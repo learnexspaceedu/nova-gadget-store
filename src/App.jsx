@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp/SignUp.jsx";
 import Cart from "./pages/Cart/Cart.jsx";
 import Checkout from "./pages/Checkout/Checkout.jsx";
 import ThankYou from "./pages/ThankYou/ThankYou.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 
 // Main app: defines the layout (Navbar + page + Footer) and all routes.
 function App() {
@@ -19,8 +20,7 @@ function App() {
       <Navbar />
       <main className="app-main">
         <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/about" element={<About />} />
@@ -30,7 +30,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="*" element={<Navigate to="/home" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

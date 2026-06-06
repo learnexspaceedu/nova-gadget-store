@@ -1,3 +1,4 @@
+import StarIcon from "../../assets/icons/StarIcon.jsx";
 import { useCart } from "../../context/CartContext.jsx";
 import "./ProductCard.css";
 
@@ -14,7 +15,7 @@ function ProductCard({ product }) {
         <span className="product-category">{product.category}</span>
         <h3 className="product-title">{product.title}</h3>
         <div className="product-rating">
-          <span className="star">★</span> {product.rating.toFixed(1)}
+          <StarIcon className={"star-icon-card"} /> {product.rating.toFixed(1)}
         </div>
         <div className="product-footer">
           <span className="product-price">${product.price.toFixed(2)}</span>

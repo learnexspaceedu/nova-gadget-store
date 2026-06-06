@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext.jsx";
 import CartItem from "../../components/CartItem/CartItem.jsx";
 import "./Cart.css";
+import CartIcon from "../../assets/icons/CartIcon.jsx";
 
 function Cart() {
   const { cartItems, totalPrice, clearCart } = useCart();
@@ -12,10 +13,14 @@ function Cart() {
     return (
       <section className="section">
         <div className="container empty-cart">
-          <div className="empty-icon">🛒</div>
+          <div className="empty-icon">
+            <CartIcon />
+          </div>
           <h1>Your cart is empty</h1>
           <p>Looks like you haven't added anything yet. Let's fix that.</p>
-          <Link to="/shop" className="btn-primary">Start Shopping</Link>
+          <Link to="/shop" className="btn-primary">
+            Start Shopping
+          </Link>
         </div>
       </section>
     );
@@ -26,7 +31,9 @@ function Cart() {
       <div className="container">
         <header className="cart-header">
           <h1 className="section-title">Shopping Cart</h1>
-          <button className="clear-btn" onClick={clearCart}>Clear cart</button>
+          <button className="clear-btn" onClick={clearCart}>
+            Clear cart
+          </button>
         </header>
 
         <div className="cart-layout">
@@ -53,7 +60,9 @@ function Cart() {
             <Link to="/checkout" className="btn-primary checkout-btn">
               Proceed to Checkout
             </Link>
-            <Link to="/shop" className="continue-link">← Continue shopping</Link>
+            <Link to="/shop" className="continue-link">
+              ← Continue shopping
+            </Link>
           </aside>
         </div>
       </div>
