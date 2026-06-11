@@ -7,6 +7,7 @@ import UserIcon from "../../assets/icons/UserIcon.jsx";
 import MenuIcon from "../../assets/icons/MenuIcon.jsx";
 import CartIcon from "../../assets/icons/CartIcon.jsx";
 import Avatar from "../Avatar/Avatar.jsx";
+import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
 function Navbar() {
   const { auth } = useAuth();
   const { totalItems } = useCart();
@@ -43,10 +44,12 @@ function Navbar() {
         </nav>
 
         <div className="nav-actions">
+          <ThemeToggle />
           <Link to="/cart" className="cart-btn" onClick={closeMenu}>
             <CartIcon />
             {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
           </Link>
+
           {/* Auth section */}
           {auth.isAuthenticated ? (
             <Avatar />

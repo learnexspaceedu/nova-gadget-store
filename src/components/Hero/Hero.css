@@ -26,8 +26,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent-glow);
+  background: var(--primary);
+  box-shadow: 0 0 10px rgb(0, 0, 255, 0.2);
 }
 .hero-title {
   font-size: 64px;
@@ -63,7 +63,6 @@
     transform 0.2s ease;
 }
 .hero-cta .btn-primary:hover {
-  box-shadow: var(--shadow-glow);
   transform: translateY(-1px);
 }
 .hero-cta .btn-ghost {
