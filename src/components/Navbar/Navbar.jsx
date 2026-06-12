@@ -7,6 +7,10 @@ import UserIcon from "../../assets/icons/UserIcon.jsx";
 import MenuIcon from "../../assets/icons/MenuIcon.jsx";
 import CartIcon from "../../assets/icons/CartIcon.jsx";
 import Avatar from "../Avatar/Avatar.jsx";
+import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
+import { navLinks } from "../../common/nav-links.js";
+import logo from "../../assets/logo.png";
+import Menu from "../Menu/Menu.jsx";
 function Navbar() {
   const { auth } = useAuth();
   const { totalItems } = useCart();
@@ -17,60 +21,57 @@ function Navbar() {
   }
 
   return (
-    <header className="navbar">
-      <div className="container navbar-inner">
-        <Link to="/home" className="logo" onClick={closeMenu}>
-          <span className="logo-dot" />
-          NovaTech
-        </Link>
-
-        <nav className={`nav-links ${open ? "open" : ""}`}>
-          <NavLink to="/" onClick={closeMenu}>
-            Home
-          </NavLink>
-          <NavLink to="/shop" onClick={closeMenu}>
-            Shop
-          </NavLink>
-          <NavLink to="/categories" onClick={closeMenu}>
-            Categories
-          </NavLink>
-          <NavLink to="/about" onClick={closeMenu}>
-            About
-          </NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>
-            Contact
-          </NavLink>
-        </nav>
-
-        <div className="nav-actions">
-          <Link to="/cart" className="cart-btn" onClick={closeMenu}>
-            <CartIcon />
-            {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+    <>
+      <header className="navbar">
+        <div className="container navbar-inner">
+          <Link to="/home" className="logo" onClick={closeMenu}>
+            <img src={logo} alt="logo" className="logo-img" />
+            <span className="logo-title">NovaTech</span>
           </Link>
-          {/* Auth section */}
-          {auth.isAuthenticated ? (
-            <Avatar />
-          ) : (
-            <>
-              <Link to="/signin" className="btn-ghost" onClick={closeMenu}>
-                Sign In
-              </Link>
-              <Link to="/signup" className="btn-primary" onClick={closeMenu}>
-                Sign Up
-              </Link>
-            </>
-          )}
 
-          <button
-            className="menu-toggle"
-            aria-label="Toggle menu"
-            onClick={() => setOpen(!open)}
-          >
-            <MenuIcon />
-          </button>
+          <nav className={`nav-links`}>
+            {navLinks.map((item) => (
+              <NavLink to={item.href} onClick={closeMenu} key={item.label}>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="nav-actions">
+            <ThemeToggle />
+            <Link to="/cart" className="cart-btn" onClick={closeMenu}>
+              <CartIcon />
+              {totalItems > 0 && (
+                <span className="cart-count">{totalItems}</span>
+              )}
+            </Link>
+
+            {/* Auth section */}
+            {auth.isAuthenticated ? (
+              <Avatar />
+            ) : (
+              <>
+                <Link to="/signin" className="btn-ghost" onClick={closeMenu}>
+                  Sign In
+                </Link>
+                <Link to="/signup" className="btn-primary" onClick={closeMenu}>
+                  Sign Up
+                </Link>
+              </>
+            )}
+
+            <button
+              className="menu-toggle"
+              aria-label="Toggle menu"
+              onClick={() => setOpen(!open)}
+            >
+              <MenuIcon />
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <Menu open={open} close={closeMenu} />
+    </>
   );
 }
 

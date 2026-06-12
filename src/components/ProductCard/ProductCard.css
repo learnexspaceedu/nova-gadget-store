@@ -66,11 +66,11 @@
   color: var(--primary);
 }
 .add-btn {
-  background: gold;
-  color: var(--text-primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
   border: none;
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   font-size: 13px;
