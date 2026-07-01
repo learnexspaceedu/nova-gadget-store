@@ -24,7 +24,7 @@ function Navbar() {
     <>
       <header className="navbar">
         <div className="container navbar-inner">
-          <Link to="/home" className="logo" onClick={closeMenu}>
+          <Link to="/" className="logo" onClick={closeMenu}>
             <img src={logo} alt="logo" className="logo-img" />
             <span className="logo-title">NovaTech</span>
           </Link>
