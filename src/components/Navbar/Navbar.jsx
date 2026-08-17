@@ -11,6 +11,7 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
 import { navLinks } from "../../common/nav-links.js";
 import logo from "../../assets/logo.png";
 import Menu from "../Menu/Menu.jsx";
+
 function Navbar() {
   const { auth } = useAuth();
   const { totalItems } = useCart();

@@ -4,6 +4,8 @@ import { navLinks } from "../../common/nav-links";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { useAuth } from "../../context/AuthContext";
+import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
+
 const Menu = ({ open, close }) => {
   const { theme, toggleTheme } = useTheme();
   const { auth, logout } = useAuth();
@@ -25,9 +27,10 @@ const Menu = ({ open, close }) => {
           </NavLink>
         ))}
 
-        <button onClick={toggleTheme} className="link-con theme-btn">
+        {/* <button onClick={toggleTheme} className="link-con">
           {theme} mode
-        </button>
+        </button> */}
+        <ThemeToggle />
         {auth.isAuthenticated && (
           <button
             onClick={() => {
