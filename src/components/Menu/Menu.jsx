@@ -1,7 +1,7 @@
 import React from "react";
 import "./Menu.css";
 import { navLinks } from "../../common/nav-links";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { useAuth } from "../../context/AuthContext";
 import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
@@ -27,11 +27,7 @@ const Menu = ({ open, close }) => {
           </NavLink>
         ))}
 
-        {/* <button onClick={toggleTheme} className="link-con">
-          {theme} mode
-        </button> */}
-        <ThemeToggle />
-        {auth.isAuthenticated && (
+        {auth.isAuthenticated ? (
           <button
             onClick={() => {
               logout();
@@ -41,7 +37,17 @@ const Menu = ({ open, close }) => {
           >
             Logout
           </button>
+        ) : (
+          <>
+            <NavLink to="/signin" className="link-con">
+              Sign In
+            </NavLink>
+            <NavLink to="/signup" className="link-con">
+              Sign Up
+            </NavLink>
+          </>
         )}
+        <ThemeToggle />
       </section>
       <div className={`overlay ${open && "overlay-open"} `} onClick={close} />
     </>
