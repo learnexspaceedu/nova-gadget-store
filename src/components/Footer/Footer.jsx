@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import { useAuth } from "../../context/AuthContext.jsx";
+import logo from "../../assets/logo.png";
 
 function Footer() {
   const { logout } = useAuth();
@@ -9,7 +10,7 @@ function Footer() {
       <div className="container footer-grid">
         <div>
           <Link to="/home" className="footer-logo">
-            <span className="logo-dot" />
+            <img src={logo} alt="logo" className="logo-img" />
             NovaTech
           </Link>
           <p className="footer-text">
@@ -55,6 +56,11 @@ function Footer() {
             </li>
           </ul>
         </div>
+      </div>
+
+      <div className="container footer-bottom">
+        <span>© {new Date().getFullYear()} NovaTech. All rights reserved.</span>
+        <span>Built by Learnex & Leaners</span>
       </div>
     </footer>
   );
