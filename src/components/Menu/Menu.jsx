@@ -39,10 +39,10 @@ const Menu = ({ open, close }) => {
           </button>
         ) : (
           <>
-            <NavLink to="/signin" className="link-con">
+            <NavLink to="/signin" className="link-con" onClick={close}>
               Sign In
             </NavLink>
-            <NavLink to="/signup" className="link-con">
+            <NavLink to="/signup" className="link-con" onClick={close}>
               Sign Up
             </NavLink>
           </>

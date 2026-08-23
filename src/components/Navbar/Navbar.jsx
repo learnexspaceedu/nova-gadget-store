@@ -25,14 +25,14 @@ function Navbar() {
     <>
       <header className="navbar">
         <div className="container navbar-inner">
-          <Link to="/" className="logo" onClick={closeMenu}>
+          <Link to="/" className="logo">
             <img src={logo} alt="logo" className="logo-img" />
             <span className="logo-title">NovaTech</span>
           </Link>
 
           <nav className={`nav-links`}>
             {navLinks.map((item) => (
-              <NavLink to={item.href} onClick={closeMenu} key={item.label}>
+              <NavLink to={item.href} key={item.label}>
                 {item.label}
               </NavLink>
             ))}
@@ -40,7 +40,7 @@ function Navbar() {
 
           <div className="nav-actions">
             <ThemeToggle />
-            <Link to="/cart" className="cart-btn" onClick={closeMenu}>
+            <Link to="/cart" className="cart-btn">
               <CartIcon />
               {totalItems > 0 && (
                 <span className="cart-count">{totalItems}</span>
@@ -52,10 +52,10 @@ function Navbar() {
               <Avatar />
             ) : (
               <>
-                <Link to="/signin" className="btn-ghost" onClick={closeMenu}>
+                <Link to="/signin" className="btn-ghost">
                   Sign In
                 </Link>
-                <Link to="/signup" className="btn-primary" onClick={closeMenu}>
+                <Link to="/signup" className="btn-primary">
                   Sign Up
                 </Link>
               </>
